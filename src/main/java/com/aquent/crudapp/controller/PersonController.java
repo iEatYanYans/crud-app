@@ -48,6 +48,8 @@ public class PersonController {
     @RequestMapping(value = "create", method = RequestMethod.GET)
     public ModelAndView create() {
         ModelAndView mav = new ModelAndView("person/create");
+        
+        mav.addObject("clients", clientService.listClients());
         mav.addObject("person", new Person());
         mav.addObject("errors", new ArrayList<String>());
         return mav;

@@ -86,6 +86,35 @@ th {
    background-color:white;
 }
 
+input{
+	margin-left: 20px;
+	
+}
+
+.editPerson{
+	position: relative;
+	width:100%;
+	top: -75px;
+}
+
+#clientList-content{
+	position: relative;
+	width:100%;
+	top: -75px;
+}
+
+.createClient{
+	position: relative;
+	width:100%;
+	top: -75px;
+}
+
+.createPerson{
+	position: relative;
+	width:100%;
+	top: -75px;
+}
+
 #createClientbtn {
 	position: absolute;
 	right: 100px;

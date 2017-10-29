@@ -54,17 +54,16 @@ $(function(){
     		        if ( url && url.substr( 0, 7 ) !== "http://"
     		            && url.substr( 0, 8 ) !== "https://"
     		            && url.substr( 0, 6 ) !== "ftp://" ) {
-    		          // then prefix with http://
     		          url = "http://" + url;
     		        }
-    		 
-    		        // Return the new url
     		        return url;
     		      }
     		},
     		'phoneNumber':{
     			required:true,
-    			number:true
+    			number:true,
+    			minlength: '10',
+    			maxlength: '15'
     		}
     		
     	}
