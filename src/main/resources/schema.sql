@@ -20,5 +20,5 @@ CREATE TABLE person (
     state varchar(2) NOT NULL,
     zip_code varchar(5) NOT NULL,
     client_id integer NOT NULL,
-    FOREIGN KEY (client_id) references client(client_id)
+    FOREIGN KEY (client_id) references client(client_id) ON DELETE CASCADE
 );
