@@ -1,3 +1,3 @@
 <div id="footer">
-	Insert footer here
+	Made by Yan Chen
 </div>
