@@ -10,5 +10,5 @@
 
 <jsp:include page="/WEB-INF/jsp/template.jsp">
 	<jsp:param name="content" value="person/content/delete-content"/>
-	<jsp:param name="title" value="${person.firstName} ${person.lastName}"/>
+	<jsp:param name="title" value=""/>
 </jsp:include>

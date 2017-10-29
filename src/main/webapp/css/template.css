@@ -1,6 +1,7 @@
 
 body {
   overflow-x: hidden;
+  font-size:18;
 }
 
 .container{
@@ -88,7 +89,19 @@ th {
 #createClientbtn {
 	position: absolute;
 	right: 100px;
-	
+}
+#personList-content{
+	position:relative;
+	top: -70px;
+}
+#contactImg{
+	vertical-align:bottom;
+}
+
+#newContact{
+	position:relative;
+	align-content:center;
+	bottom: 0%;
 }
 
 #wrapper {

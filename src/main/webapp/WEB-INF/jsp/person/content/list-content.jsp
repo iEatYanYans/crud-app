@@ -4,8 +4,10 @@
 
 <div id="personList-content" class="container table-responsive"">
 	<h2> Contacts</h2>
-
-		<a href="${pageContext.request.contextPath}/person/create"><button class="btn btn-default" >New Contact</button></a>
+	<div id="cover-container"></div>
+	<img id="contactImg" src="https://i.imgur.com/v5HZW3h.png" height="250" alt="contact img">
+		<a href="${pageContext.request.contextPath}/person/create"><button class="btn btn-default" id="newContact" >New Contact</button></a>
+	</div>
 <div>
 	<c:choose>
 		<c:when test="${fn:length(persons) gt 0}">
