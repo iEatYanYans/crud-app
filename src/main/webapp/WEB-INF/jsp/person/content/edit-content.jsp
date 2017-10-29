@@ -1,8 +1,10 @@
 <%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
 <%@taglib prefix='fn' uri='http://java.sun.com/jsp/jstl/functions'%>
 
-<div class="container">
-<div> <h3>${person.firstName} ${person.lastName}'s Profile</h3></div>
+<div class="container editPerson">
+<div> <h3>${person.firstName} ${person.lastName}'s Profile</h3>
+	<img id="contactProfImg" src="https://i.imgur.com/TZTq0pu.png" width=250 alt="user-image">
+</div>
 	<c:if test="${fn:length(errors) gt 0}">
 		<p>Please correct the following errors in your submission:</p>
 		<ul>
@@ -45,8 +47,9 @@
 			</c:if>
 		</select>
 			<br />
-			<button type="submit" name="Submit" value="Save">Update</button>
-			<button type="button" id="editButton" value="enableInputForms">Edit</button> 
+			<br>
+			<button type="submit" name="Submit" value="Save" class="btn btn-default">Save</button>
+			<button type="button" id="editButton" value="enableInputForms" class="glyphicon glyphicon-pencil btn btn-default">Edit</button> 
 			<br>
 	</form>
 </div>

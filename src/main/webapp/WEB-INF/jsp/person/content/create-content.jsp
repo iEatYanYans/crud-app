@@ -4,6 +4,7 @@
 <div class="container createPerson">
 <div>
 	<h3>Add Contact</h3>
+	<img id="addClientImg" src="https://i.imgur.com/ib3sAyK.png" height=200 alt="add client image">
 </div>
 	<c:if test="${fn:length(errors) gt 0}">
         <p>Please correct the following errors in your submission:</p>
@@ -36,8 +37,14 @@
         <label for="zipCode">Zip Code:</label>
         <input type="text" name="zipCode" value="${person.zipCode}"/>
         <br/>
-        <label for="clientId">Client ID:</label>
-        <input type="text" name="clientId" value="${person.clientId}"/>
+        <label for="clientId">Company:</label> 
+		<select name="clientId">
+			<c:if test="${fn:length(clients) gt 0}">
+				<c:forEach items="${clients}" var="client">
+					<option value="${client.clientId}">${client.companyName}</option>
+				</c:forEach>
+			</c:if>
+		</select>
         <br/>
         <input type="submit" name="Submit" value="Submit"/>
     </form>

@@ -43,8 +43,8 @@
 	       <label for="zipCode">Zip Code:</label>
 	       <input type="text" name="zipCode" value="${client.zipCode}"/>
 	       <br/>
-	       <button type="button" id="editButton" value="enableInputForms">Edit</button>
-	       <input type="submit" name="Submit" value="Save"/>
+	       <button type="button" id="editButton" class="glyphicon glyphicon-pencil" value="enableInputForms">Edit</button>
+	       <input type="submit" name="Submit" value="Save" class="btn btn-default"/>
 	   </form>
 	    </div>
    </div>

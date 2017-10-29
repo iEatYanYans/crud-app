@@ -4,6 +4,7 @@
 <div class="container createClient">
 <div>
 	<h3> Add Client</h3>
+	<img id="addClientImg" src="https://i.imgur.com/gibT21f.png" height=200 alt="add client image">
 </div>
 	<c:if test="${fn:length(errors) gt 0}">
 		<p>Please correct the following errors in your submission:</p>
