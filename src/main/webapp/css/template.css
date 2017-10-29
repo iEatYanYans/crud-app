@@ -18,10 +18,29 @@ body {
 	right:25px;
 }
 
+#deleteClientBtn{
+	position: sticky;
+    right: 140px;
+}
+
 .main{
 	overflow: auto;
 }
 
+label {
+	color: #5eaad9;
+}
+
+h2 h3 {
+	color: #5eaad9;
+}
+.editForm{
+	
+}
+
+.editForm > input{
+	margin-bottom: 10px;
+}
 
 table{
 	text-align:center;
