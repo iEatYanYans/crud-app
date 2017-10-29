@@ -8,8 +8,6 @@
 <%@taglib prefix='fn' uri='http://java.sun.com/jsp/jstl/functions'%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%-- <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/template.css" crossorigin="anonymous"> --%>
-
 <jsp:include page="/WEB-INF/jsp/template.jsp">
 	<jsp:param name="content" value="client/content/edit-content"/>
 	<jsp:param name="title" value=""/>

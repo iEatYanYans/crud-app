@@ -14,13 +14,18 @@
     <div id="wrapper" class="main">
 	<jsp:include page="/WEB-INF/jsp/template/sidebar.jsp"/>
 
-	
 	<h1>${param.title}</h1>
+	<div id="navigation">
+	<span>
+	<button id="backButton" class="btn btn-default btn-lg glyphicon glyphicon-arrow-left"></button>
+	<button id="forwardButton" class="btn btn-default btn-lg glyphicon glyphicon-arrow-right"></button>
+	</span>
+	</div>
 
 	<jsp:include page="/WEB-INF/jsp/${param.content}.jsp"/>
 	
-	
-	<jsp:include page="/WEB-INF/jsp/template/footer.jsp"/>
+
 	</div>
+	<jsp:include page="/WEB-INF/jsp/template/footer.jsp"/>
 </body>
 </html>
