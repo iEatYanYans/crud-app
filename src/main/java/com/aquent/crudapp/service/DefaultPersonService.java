@@ -74,7 +74,6 @@ public class DefaultPersonService implements PersonService {
 	@Override
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public List<Person> listPeopleFromClient(Integer id) {
-		System.out.println("Value passed to DefaultPersonService is: " + id);
 		return personDao.listPeopleFromClient(id);
 	}
 }
