@@ -4,7 +4,8 @@
        
 <div id="clientList-content" class="container table-responsive"">
 	<h3> Clients</h3>
-  <p><a href="${pageContext.request.contextPath}/client/create">Create New Client</a></p>
+  <button class="btn btn-default" ><a href="${pageContext.request.contextPath}/client/create">Create New Client</a></button>
+  <p>
   <c:choose>
       <c:when test="${fn:length(clients) gt 0}">
           <table class="table table-striped">
@@ -14,7 +15,7 @@
                       <th>Company Name</th>
                       <th>Website </th>
                       <th>Phone Number</th>
-                      <th>Actions</th>
+                      <th>Delete</th>
                   </tr>
               </thead>
               <tbody>
@@ -25,7 +26,7 @@
                           <td>${client.url}</td>
                           <td>${client.phoneNumber}</td>
                           <td>
-                              <a href="${pageContext.request.contextPath}/client/delete/${client.clientId}">Delete Client</a>
+                              <a href="${pageContext.request.contextPath}/client/delete/${client.clientId}"><button class="glyphicon glyphicon-trash btn btn-default btn-md" aria-label="true"></button></a>
                           </td>
                       </tr>
                   </c:forEach>
@@ -36,4 +37,5 @@
           <p>No results found.</p>
       </c:otherwise>
   </c:choose>
+  </p>
 </div>
