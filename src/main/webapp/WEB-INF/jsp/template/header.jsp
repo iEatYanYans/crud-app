@@ -18,3 +18,7 @@
 
 <!-- Custom JS -->
 <script src="<%=request.getContextPath()%>/scripts/index.js"></script>
+
+<!-- jQuery Validation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>

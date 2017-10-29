@@ -10,7 +10,7 @@
 			</c:forEach>
 		</ul>
 	</c:if>
-	<form action="${pageContext.request.contextPath}/client/create"
+	<form class="clientForm" action="${pageContext.request.contextPath}/client/create"
 		method="POST">
 		<br />
 		<label for="companyName">Company Name:</label> 
@@ -20,7 +20,7 @@
 		<input type="text" name="url" value="${client.url}" /> 
 		<br /> 
 		<label for="phoneNumber">Phone Number:</label> 
-		<input type="text" name="phoneNumber" value="${client.phoneNumber}" /> 
+		<input type="text" name="phoneNumber" value="${client.phoneNumber}"/> 
 		<br /> 
 		<label for="streetAddress">Street Address:</label> 
 		<input type="text" name="streetAddress" value="${client.streetAddress}" /> 

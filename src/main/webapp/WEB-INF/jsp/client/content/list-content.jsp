@@ -34,7 +34,7 @@
           </table>
       </c:when>
       <c:otherwise>
-          <p>No results found.</p>
+          <p style="font-size:24px; color:red; text-align:center; position:relative; bottom:0px;">No clients found.</p>
       </c:otherwise>
   </c:choose>
   </p>

@@ -18,7 +18,7 @@
 	    </div>
 	    	
 	 	<div class="col-xs-4 col-sm-6" id="editClientForm">
-	   <form class="editForm" action="${pageContext.request.contextPath}/client/edit" method="POST">
+	   <form class="editForm clientForm" action="${pageContext.request.contextPath}/client/edit" method="POST">
 	       <input type="hidden" name="clientId" value="${client.clientId}"/>
 	       <br/>
 	       <h3>

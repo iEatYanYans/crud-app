@@ -13,7 +13,7 @@
             </c:forEach>
         </ul>
     </c:if>
-    <form action="${pageContext.request.contextPath}/person/create" method="POST">
+    <form class="personForm" action="${pageContext.request.contextPath}/person/create" method="POST">
         <br/>
         <label for="firstName">First Name:</label>
         <input type="text" name="firstName" value="${person.firstName}"/>
