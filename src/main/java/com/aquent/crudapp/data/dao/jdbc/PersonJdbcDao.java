@@ -7,9 +7,7 @@ import java.util.List;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.transaction.annotation.Propagation;
@@ -31,7 +29,7 @@ public class PersonJdbcDao implements PersonDao {
                                                   + " WHERE person_id = :personId";
     private static final String SQL_CREATE_PERSON = "INSERT INTO person (first_name, last_name, email_address, street_address, city, state, zip_code, client_id)"
                                                   + " VALUES (:firstName, :lastName, :emailAddress, :streetAddress, :city, :state, :zipCode, :clientId)";
-    private static final String SQL_LIST_PERSONS_BY_CLIENT = "SELECT * FROM person WHERE client_id = 1";
+   // private static final String SQL_LIST_PERSONS_BY_CLIENT = "SELECT * FROM person WHERE client_id = 1";
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -100,4 +98,5 @@ public class PersonJdbcDao implements PersonDao {
             return person;
         }
     }
+    
 }
