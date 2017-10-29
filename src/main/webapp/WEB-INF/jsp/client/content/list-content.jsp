@@ -4,7 +4,8 @@
        
 <div id="clientList-content" class="container table-responsive"">
 	<h3> Clients</h3>
-  <button class="btn btn-default" ><a href="${pageContext.request.contextPath}/client/create">Create New Client</a></button>
+	<img id="clientListImg" src="https://i.imgur.com/v2lgoj7.png" height="250" alt="Client Image">
+  <button id="createClientbtn" class="btn btn-default" ><a href="${pageContext.request.contextPath}/client/create">Create New Client</a></button>
   <p>
   <c:choose>
       <c:when test="${fn:length(clients) gt 0}">

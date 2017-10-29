@@ -11,5 +11,5 @@
 
 <jsp:include page="/WEB-INF/jsp/template.jsp">
 	<jsp:param name="content" value="client/content/create-content"/>
-	<jsp:param name="title" value="Create Client"/>
+	<jsp:param name="title" value=""/>
 </jsp:include>

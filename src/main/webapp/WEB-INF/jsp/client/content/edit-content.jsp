@@ -13,7 +13,7 @@
    	</c:if>
    <div id="clientInfo">
 	    <div class="profile_pic col-sm-4 placeholder">
-	    	<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="250" height="250" class="img-responsive" alt="Generic placeholder thumbnail">
+	    	<img id="clientImg" src="https://i.pinimg.com/originals/1f/39/21/1f39219c08d52797c7234b074fb75a2f.png" width="250" height="250" class="img-responsive" alt="Client Image">
 	    	<a id="deleteClientBtn" href="${pageContext.request.contextPath}/client/delete/${client.clientId}"><button class="glyphicon glyphicon-trash btn btn-default btn-lg" aria-label="true"> Delete Client</button></a>
 	    </div>
 	    	

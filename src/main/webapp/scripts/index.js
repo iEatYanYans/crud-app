@@ -24,7 +24,9 @@ $(function(){
     			maxlength: '50',
     			
     		},
-    		'lastName': required,
+    		'lastName':{
+    			required:true
+    		},
     		'email':{
     			email:true,
     			required: true
@@ -38,10 +40,27 @@ $(function(){
     });
     $('.clientForm').validate({
     	rules:{
-    		'companyName': required,
+    		'companyName': {
+    			required:true
+    		},
     		'url':{
     			required:true,
-    			url:true
+    			url:true,
+    			
+    			normalizer: function( value ) {
+    		        var url = value;
+    		 
+    		        // Check if it doesn't start with http:// or https:// or ftp://
+    		        if ( url && url.substr( 0, 7 ) !== "http://"
+    		            && url.substr( 0, 8 ) !== "https://"
+    		            && url.substr( 0, 6 ) !== "ftp://" ) {
+    		          // then prefix with http://
+    		          url = "http://" + url;
+    		        }
+    		 
+    		        // Return the new url
+    		        return url;
+    		      }
     		},
     		'phoneNumber':{
     			required:true,

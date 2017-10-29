@@ -1,7 +1,10 @@
 <%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
 <%@taglib prefix='fn' uri='http://java.sun.com/jsp/jstl/functions'%>
 
-<body>
+<div class="container createClient">
+<div>
+	<h3> Add Client</h3>
+</div>
 	<c:if test="${fn:length(errors) gt 0}">
 		<p>Please correct the following errors in your submission:</p>
 		<ul>
@@ -10,6 +13,7 @@
 			</c:forEach>
 		</ul>
 	</c:if>
+	<div class="form-content">
 	<form class="clientForm" action="${pageContext.request.contextPath}/client/create"
 		method="POST">
 		<br />
@@ -36,4 +40,5 @@
 		<br /> 
 		<input type="submit" name="Submit" value="Submit" />
 	</form>
-</body>
+	</div>
+</div>

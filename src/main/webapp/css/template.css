@@ -20,7 +20,7 @@ body {
 
 #deleteClientBtn{
 	position: sticky;
-    right: 140px;
+    right: 120px;
 }
 
 .main{
@@ -48,9 +48,13 @@ table{
 }
 
 .profile_pic{
-	position: sticky;
-	leftt: 15px;
+	position: relative;
+	left: 15px;
 	vertical-align: middle;
+}
+
+#clientImg{
+	width: fit-content;
 }
 
 #editClientForm{
@@ -71,15 +75,20 @@ th {
 }
 
 #footer {
-   position:absolute;
+   position:fixed;
    font-size: medium;
    text-align: center;
    color: gray;
-   bottom:0;
+   bottom:0%;
    width:100%;
-   height:40px;   /* Height of the footer */
+   height:20px;   /* Height of the footer */
    background-color:white;
 }
+
+#createClientbtn {
+	position: absolute;
+	right: 100px;
+	
 }
 
 #wrapper {
