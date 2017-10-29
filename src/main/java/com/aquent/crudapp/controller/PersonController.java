@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.aquent.crudapp.domain.Person;
+import com.aquent.crudapp.service.ClientService;
 import com.aquent.crudapp.service.PersonService;
 
 /**
@@ -25,6 +26,7 @@ public class PersonController {
     public static final String COMMAND_DELETE = "Delete";
 
     @Inject private PersonService personService;
+    @Inject private ClientService clientService;
 
     /**
      * Renders the listing page.
@@ -82,7 +84,13 @@ public class PersonController {
     @RequestMapping(value = "edit/{personId}", method = RequestMethod.GET)
     public ModelAndView edit(@PathVariable Integer personId) {
         ModelAndView mav = new ModelAndView("person/edit");
-        mav.addObject("person", personService.readPerson(personId));
+        
+        Person person =  personService.readPerson(personId);
+        Integer clientId = person.getClientId();
+        
+        mav.addObject("clients", clientService.listClients());
+        mav.addObject("person", person);
+        mav.addObject("client", clientService.readClient(clientId));
         mav.addObject("errors", new ArrayList<String>());
         return mav;
     }

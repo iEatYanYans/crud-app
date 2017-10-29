@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Simple controller to redirect to the person listing.  In the future, we could
  * add other landing page behavior here if we were writing a real application.
  */
+
+	//TODO add another landing page 
 @Controller
 public class HomeController {
 
