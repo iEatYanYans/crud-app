@@ -7,7 +7,9 @@ import java.util.List;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.transaction.annotation.Propagation;
@@ -24,11 +26,12 @@ public class PersonJdbcDao implements PersonDao {
     private static final String SQL_LIST_PEOPLE = "SELECT * FROM person ORDER BY first_name, last_name, person_id";
     private static final String SQL_READ_PERSON = "SELECT * FROM person WHERE person_id = :personId";
     private static final String SQL_DELETE_PERSON = "DELETE FROM person WHERE person_id = :personId";
-    private static final String SQL_UPDATE_PERSON = "UPDATE person SET (first_name, last_name, email_address, street_address, city, state, zip_code)"
-                                                  + " = (:firstName, :lastName, :emailAddress, :streetAddress, :city, :state, :zipCode)"
+    private static final String SQL_UPDATE_PERSON = "UPDATE person SET (first_name, last_name, email_address, street_address, city, state, zip_code, client_id)"
+                                                  + " = (:firstName, :lastName, :emailAddress, :streetAddress, :city, :state, :zipCode, :clientId)"
                                                   + " WHERE person_id = :personId";
-    private static final String SQL_CREATE_PERSON = "INSERT INTO person (first_name, last_name, email_address, street_address, city, state, zip_code)"
-                                                  + " VALUES (:firstName, :lastName, :emailAddress, :streetAddress, :city, :state, :zipCode)";
+    private static final String SQL_CREATE_PERSON = "INSERT INTO person (first_name, last_name, email_address, street_address, city, state, zip_code, client_id)"
+                                                  + " VALUES (:firstName, :lastName, :emailAddress, :streetAddress, :city, :state, :zipCode, :clientId)";
+    private static final String SQL_LIST_PERSONS_BY_CLIENT = "SELECT * FROM person WHERE client_id = 1";
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -67,6 +70,15 @@ public class PersonJdbcDao implements PersonDao {
         namedParameterJdbcTemplate.update(SQL_CREATE_PERSON, new BeanPropertySqlParameterSource(person), keyHolder);
         return keyHolder.getKey().intValue();
     }
+    
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    public List<Person> listPeopleFromClient(Integer clientId) {
+    	final String SQL_LIST_PERSONS_BY_CLIENTS = "SELECT * FROM person WHERE client_id =" + clientId; //TODO don't hardcode. FIX THIS
+    	//System.out.println(SQL_LIST_PERSONS_BY_CLIENTS.toString());
+    	return namedParameterJdbcTemplate.getJdbcOperations().query(SQL_LIST_PERSONS_BY_CLIENTS, new PersonRowMapper());
+    	//return namedParameterJdbcTemplate.getJdbcOperations().query(SQL_LIST_PERSONS_BY_CLIENT, new PersonRowMapper());
+    }
 
     /**
      * Row mapper for person records.
@@ -84,6 +96,7 @@ public class PersonJdbcDao implements PersonDao {
             person.setCity(rs.getString("city"));
             person.setState(rs.getString("state"));
             person.setZipCode(rs.getString("zip_code"));
+            person.setClientId(rs.getInt("client_id"));
             return person;
         }
     }
