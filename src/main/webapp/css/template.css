@@ -7,6 +7,50 @@ body {
 	text-align: center;
 }
 
+#backButton{
+	position:relative;
+	left: 25px;
+}
+
+#forwardButton{
+	position:absolute;
+	top: 65px;
+	right:25px;
+}
+
+.main{
+	overflow: auto;
+}
+
+
+table{
+	text-align:center;
+	overflow-y: visible;
+}
+
+.profile_pic{
+	position: sticky;
+	leftt: 15px;
+	vertical-align: middle;
+}
+
+#editClientForm{
+	position:sticky;
+	vertical-align: middle;
+	right:50px;
+	top: 40px;
+	margin-top: -40px;
+	margin-bottom: 40px;
+}
+th {
+	text-align: center;
+}
+
+#clientInfo{
+	text-align: center;
+	vertical-align: middle;
+}
+
 #footer {
    position:absolute;
    font-size: medium;
@@ -14,7 +58,7 @@ body {
    color: gray;
    bottom:0;
    width:100%;
-   height:60px;   /* Height of the footer */
+   height:40px;   /* Height of the footer */
    background-color:white;
 }
 }
@@ -64,6 +108,7 @@ body {
   position: absolute;
   margin-right: -250px;
 }
+
 
 
 /* Sidebar Styles */
@@ -137,11 +182,14 @@ body {
     width: 250px;
   }
   #page-content-wrapper {
+  	height: 500px;
     padding: 20px;
     position: relative;
+    overflow: auto;
   }
   #wrapper.toggled #page-content-wrapper {
     position: relative;
     margin-right: 0;
+    overflow: auto;
   }
 }
