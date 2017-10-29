@@ -14,9 +14,11 @@
    <div id="clientInfo">
 	    <div class="profile_pic col-sm-4 placeholder">
 	    	<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="250" height="250" class="img-responsive" alt="Generic placeholder thumbnail">
+	    	<a id="deleteClientBtn" href="${pageContext.request.contextPath}/client/delete/${client.clientId}"><button class="glyphicon glyphicon-trash btn btn-default btn-lg" aria-label="true"> Delete Client</button></a>
 	    </div>
+	    	
 	 	<div class="col-xs-4 col-sm-6" id="editClientForm">
-	   <form action="${pageContext.request.contextPath}/client/edit" method="POST">
+	   <form class="editForm" action="${pageContext.request.contextPath}/client/edit" method="POST">
 	       <input type="hidden" name="clientId" value="${client.clientId}"/>
 	       <br/>
 	       <h3>
@@ -41,7 +43,7 @@
 	       <label for="zipCode">Zip Code:</label>
 	       <input type="text" name="zipCode" value="${client.zipCode}"/>
 	       <br/>
-	       <button type="button" id="editClient">Edit</button>
+	       <button type="button" id="editButton" value="enableInputForms">Edit</button>
 	       <input type="submit" name="Submit" value="Save"/>
 	   </form>
 	    </div>

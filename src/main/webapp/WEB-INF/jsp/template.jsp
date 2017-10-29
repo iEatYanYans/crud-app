@@ -6,9 +6,7 @@
 <html>
     <head>
        <jsp:include page="/WEB-INF/jsp/template/header.jsp"/>
-       <!--- Custom CSS -->
-       <%-- <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/template.css"> --%>
-		<%-- <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>css/template.css"> --%>
+
     </head>
     <body>
     <div id="wrapper" class="main">
@@ -17,8 +15,8 @@
 	<h1>${param.title}</h1>
 	<div id="navigation">
 	<span>
-	<button id="backButton" class="btn btn-default btn-lg glyphicon glyphicon-arrow-left"></button>
-	<button id="forwardButton" class="btn btn-default btn-lg glyphicon glyphicon-arrow-right"></button>
+	<button id="backButton" class="btn btn-default btn-lg glyphicon glyphicon-arrow-left" onclick="goBack()"></button>
+	<button id="forwardButton" class="btn btn-default btn-lg glyphicon glyphicon-arrow-right" onclick="goFoward()"></button>
 	</span>
 	</div>
 
