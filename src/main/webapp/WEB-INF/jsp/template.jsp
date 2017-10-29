@@ -5,18 +5,13 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>${param.title}</title>
-        <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+       <jsp:include page="/WEB-INF/jsp/template/header.jsp"/>
+       <!--- Custom CSS -->
+       <%-- <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/template.css"> --%>
+		<%-- <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>css/template.css"> --%>
     </head>
     <body>
+    <div id="wrapper" class="main">
 	<jsp:include page="/WEB-INF/jsp/template/sidebar.jsp"/>
 
 	
@@ -24,7 +19,8 @@
 
 	<jsp:include page="/WEB-INF/jsp/${param.content}.jsp"/>
 	
-	<jsp:include page="/WEB-INF/jsp/template/footer.jsp"/>
 	
+	<jsp:include page="/WEB-INF/jsp/template/footer.jsp"/>
+	</div>
 </body>
 </html>
